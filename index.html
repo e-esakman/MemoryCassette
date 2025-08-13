@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Cassette</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+    <div class="app-container vintage-layout">
+        <!-- Vintage Newsletter Header -->
+        <header class="vintage-header">
+            <div class="vintage-title">
+                <h1 class="retro-brand">MemoryCassette</h1>
+                <div class="vintage-subtitle">Personal Emotional Processing System</div>
+                <div class="vintage-scale">
+                    <div class="scale-line"></div>
+                    <div class="scale-marks">
+                        <span>|</span><span>|</span><span>|</span><span>|</span><span>|</span>
+                        <span>|</span><span>|</span><span>|</span><span>|</span><span>|</span>
+                    </div>
+                    <div class="scale-line"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Layout Container -->
+        <div class="vintage-main">
+            <!-- Top Navigation Menu -->
+            <nav class="vintage-nav">
+                <div class="nav-section">
+                    <h3 class="nav-title">MENU</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item active" data-section="home">
+                            <span class="nav-icon">📝</span>
+                            <span class="nav-text">WRITE</span>
+                        </li>
+                        <li class="nav-item" data-section="archive">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text">ARCHIVE</span>
+                        </li>
+                        <li class="nav-item" data-section="moods">
+                            <span class="nav-icon">✨</span>
+                            <span class="nav-text">MOODS</span>
+                        </li>
+                        <li class="nav-item" data-section="themes">
+                            <span class="nav-icon">🎨</span>
+                            <span class="nav-text">THEMES</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="nav-title">CONTACT</h3>
+                    <div class="nav-contact">
+                        <div class="contact-item">THERAPEUTIC</div>
+                        <div class="contact-item">PROCESSING</div>
+                        <div class="contact-item">SYSTEM</div>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="nav-title">STATUS</h3>
+                    <div class="status-indicator">
+                        <div class="status-light"></div>
+                        <span class="status-text">READY</span>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Content Area -->
+            <main class="vintage-content">
+                <!-- Home Section -->
+                <section class="content-section active" id="homeSection">
+
+                    <!-- Main Cassette Player -->
+                    <div class="cassette-body">
+                        <!-- Sticky Note -->
+                        <div class="sticky-note">dump your<br>thoughts</div>
+
+                        <!-- Cassette Display -->
+                        <div class="cassette-display">
+                            <div class="display-screen">
+                                <div class="screen-content">
+                                    <div class="track-info">
+                                        <span class="track-name" id="trackName">Ready</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tape Reels -->
+                        <div class="tape-reels">
+                            <div class="reel left-reel" id="leftReel">
+                                <div class="reel-center"></div>
+                                <div class="reel-spokes"></div>
+                            </div>
+                            <div class="reel right-reel" id="rightReel">
+                                <div class="reel-center"></div>
+                                <div class="reel-spokes"></div>
+                            </div>
+                        </div>
+
+                        <!-- Input Section -->
+                        <div class="input-section">
+                            <textarea id="thoughtInput" class="thought-input" placeholder="Type your thoughts here..."
+                                rows="3"></textarea>
+
+                            <!-- Quick Mood Selector -->
+                            <div class="quick-mood-selector" id="quickMoodSelector" style="display: none;">
+                                <div class="mood-prompt">How are you feeling?</div>
+                                <div class="quick-moods">
+                                    <button class="quick-mood-btn" data-mood="happy" data-value="8">😊</button>
+                                    <button class="quick-mood-btn" data-mood="excited" data-value="9">🤩</button>
+                                    <button class="quick-mood-btn" data-mood="peaceful" data-value="6">😌</button>
+                                    <button class="quick-mood-btn" data-mood="neutral" data-value="5">😐</button>
+                                    <button class="quick-mood-btn" data-mood="thoughtful" data-value="4">🤔</button>
+                                    <button class="quick-mood-btn" data-mood="anxious" data-value="3">😰</button>
+                                    <button class="quick-mood-btn" data-mood="sad" data-value="2">😢</button>
+                                </div>
+                            </div>
+
+                            <div class="button-row">
+                                <button class="dump-btn" id="dumpBtn">Dump</button>
+                                <button class="archive-toggle" id="archiveToggle" title="Toggle save to archive">
+                                    <span class="toggle-icon">💾</span>
+                                </button>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </section>
+
+                <!-- Archive Section -->
+                <section class="content-section" id="archiveSection">
+                    <div class="archive-content">
+                        <div class="shelf-header">
+                            <h2 class="section-title">📼 Memory Cassette Shelf</h2>
+                            <p class="section-subtitle">Your personal collection of archived thoughts and experiences
+                            </p>
+                            <div class="shelf-stats">
+                                <span class="stat-item">
+                                    <span class="stat-icon">📊</span>
+                                    <span class="stat-text" id="archiveCount">0 memories</span>
+                                </span>
+                                <span class="stat-item">
+                                    <span class="stat-icon">🎵</span>
+                                    <span class="stat-text">Vintage Collection</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Simple Archive Display -->
+
+                        <div class="archive-grid" id="archiveGrid">
+                            <!-- Vintage cassette tapes will be populated here -->
+                        </div>
+
+                        <div class="archive-empty" id="archiveEmpty">
+                            <div class="empty-message">
+                                <span class="empty-icon">📼</span>
+                                <h3>Your cassette shelf is empty</h3>
+                                <p>Switch to archive mode and start building your memory collection</p>
+                                <div class="empty-hint">
+                                    <span>💡 Tip: Toggle the archive button (💾) to save your thoughts
+                                        permanently</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Moods Section -->
+                <section class="content-section" id="moodsSection">
+                    <div class="moods-content">
+                        <div class="constellation-header">
+                            <h2 class="section-title">✨ Mood Constellations</h2>
+                            <p class="section-subtitle">Track your emotional patterns in a beautiful galaxy visualization</p>
+                            <div class="constellation-info">
+                                <span class="info-item">
+                                    <span class="info-icon">🌟</span>
+                                    <span class="info-text">Click on mood stars to record your current emotional state</span>
+                                </span>
+                                <span class="info-item">
+                                    <span class="info-icon">🌌</span>
+                                    <span class="info-text">Watch your emotional journey unfold as a personal constellation</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Mood Selector -->
+                        <div class="mood-selector-constellation">
+                            <h3>Select Your Current Mood</h3>
+                            <div class="mood-grid">
+                                <div class="mood-star" data-mood="happy" data-value="8">
+                                    <div class="star-emoji">😊</div>
+                                    <div class="star-label">Happy</div>
+                                    <div class="star-glow happy-glow"></div>
+                                </div>
+                                <div class="mood-star" data-mood="excited" data-value="9">
+                                    <div class="star-emoji">🤩</div>
+                                    <div class="star-label">Excited</div>
+                                    <div class="star-glow excited-glow"></div>
+                                </div>
+                                <div class="mood-star" data-mood="peaceful" data-value="6">
+                                    <div class="star-emoji">😌</div>
+                                    <div class="star-label">Peaceful</div>
+                                    <div class="star-glow peaceful-glow"></div>
+                                </div>
+                                <div class="mood-star" data-mood="grateful" data-value="7">
+                                    <div class="star-emoji">🙏</div>
+                                    <div class="star-label">Grateful</div>
+                                    <div class="star-glow grateful-glow"></div>
+                                </div>
+                                <div class="mood-star" data-mood="neutral" data-value="5">
+                                    <div class="star-emoji">😐</div>
+                                    <div class="star-label">Neutral</div>
+                                    <div class="star-glow neutral-glow"></div>
+                                </div>
+                                <div class="mood-star" data-mood="thoughtful" data-value="4">
+                                    <div class="star-emoji">🤔</div>
+                                    <div class="star-label">Thoughtful</div>
+                                    <div class="star-glow thoughtful-glow"></div>
+                                </div>
+                                <div class="mood-star" data-mood="anxious" data-value="3">
+                                    <div class="star-emoji">😰</div>
+                                    <div class="star-label">Anxious</div>
+                                    <div class="star-glow anxious-glow"></div>
+                                </div>
+                                <div class="mood-star" data-mood="sad" data-value="2">
+                                    <div class="star-emoji">😢</div>
+                                    <div class="star-label">Sad</div>
+                                    <div class="star-glow sad-glow"></div>
+                                </div>
+                                <div class="mood-star" data-mood="angry" data-value="1">
+                                    <div class="star-emoji">😠</div>
+                                    <div class="star-label">Angry</div>
+                                    <div class="star-glow angry-glow"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Constellation Map -->
+                        <div class="constellation-map">
+                            <h3>Your Emotional Galaxy</h3>
+                            <div class="galaxy-container">
+                                <canvas id="constellationCanvas" width="800" height="400"></canvas>
+                                <div class="galaxy-overlay">
+                                    <div class="current-mood-display" id="currentMoodDisplay">
+                                        <span class="current-emoji">✨</span>
+                                        <span class="current-text">Select a mood to add to your constellation</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </section>
+
+                <!-- Themes Section -->
+                <section class="content-section" id="themesSection">
+                    <div class="themes-content">
+                        <!-- Theme Selector -->
+                        <div class="theme-selector">
+                            <!-- Compact Theme Table -->
+                            <div class="theme-table">
+                                <!-- Vintage Newsletter Theme -->
+                                <div class="theme-row active" data-theme="vintage">
+                                    <div class="theme-info">
+                                        <input type="radio" name="theme-selection" id="theme-vintage" value="vintage" checked>
+                                        <label for="theme-vintage" class="theme-name">Vintage Newsletter</label>
+                                        <span class="default-tag">DEFAULT</span>
+                                    </div>
+                                    <div class="theme-colors">
+                                        <div class="color-strip" style="background: #e8dcc0;"></div>
+                                        <div class="color-strip" style="background: #d4c4a8;"></div>
+                                        <div class="color-strip" style="background: #8b7355;"></div>
+                                        <div class="color-strip" style="background: #2c2c2c;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Warm Paper Theme -->
+                                <div class="theme-row" data-theme="warm-paper">
+                                    <div class="theme-info">
+                                        <input type="radio" name="theme-selection" id="theme-warm-paper" value="warm-paper">
+                                        <label for="theme-warm-paper" class="theme-name">Warm Paper</label>
+                                    </div>
+                                    <div class="theme-colors">
+                                        <div class="color-strip" style="background: #faf6f0;"></div>
+                                        <div class="color-strip" style="background: #f4e6d7;"></div>
+                                        <div class="color-strip" style="background: #d4a574;"></div>
+                                        <div class="color-strip" style="background: #8b4513;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Dusty Teal Theme -->
+                                <div class="theme-row" data-theme="dusty-teal">
+                                    <div class="theme-info">
+                                        <input type="radio" name="theme-selection" id="theme-dusty-teal" value="dusty-teal">
+                                        <label for="theme-dusty-teal" class="theme-name">Dusty Teal</label>
+                                    </div>
+                                    <div class="theme-colors">
+                                        <div class="color-strip" style="background: #e8f4f8;"></div>
+                                        <div class="color-strip" style="background: #b8d4da;"></div>
+                                        <div class="color-strip" style="background: #5f9ea0;"></div>
+                                        <div class="color-strip" style="background: #2f4f4f;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Typewriter Theme -->
+                                <div class="theme-row" data-theme="typewriter">
+                                    <div class="theme-info">
+                                        <input type="radio" name="theme-selection" id="theme-typewriter" value="typewriter">
+                                        <label for="theme-typewriter" class="theme-name">Typewriter</label>
+                                    </div>
+                                    <div class="theme-colors">
+                                        <div class="color-strip" style="background: #ffffff; border: 1px solid #ddd;"></div>
+                                        <div class="color-strip" style="background: #f5f5f5;"></div>
+                                        <div class="color-strip" style="background: #666666;"></div>
+                                        <div class="color-strip" style="background: #000000;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Classic Sepia Theme -->
+                                <div class="theme-row" data-theme="classic-sepia">
+                                    <div class="theme-info">
+                                        <input type="radio" name="theme-selection" id="theme-classic-sepia" value="classic-sepia">
+                                        <label for="theme-classic-sepia" class="theme-name">Classic Sepia</label>
+                                    </div>
+                                    <div class="theme-colors">
+                                        <div class="color-strip" style="background: #f4f1e8;"></div>
+                                        <div class="color-strip" style="background: #deb887;"></div>
+                                        <div class="color-strip" style="background: #a0522d;"></div>
+                                        <div class="color-strip" style="background: #654321;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <!-- Result Display -->
+                <div class="result-display" id="resultDisplay">
+                    <!-- Dynamic content will appear here -->
+                </div>
+
+
+        </div>
+
+        <script src="app.js"></script>
+</body>
+
+</html>
