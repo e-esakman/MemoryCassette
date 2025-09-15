@@ -22,26 +22,21 @@ structure features, design UI, and generate key code components.
 >AI Assistance: Kiro (specs, hooks, vibe coding)<br>
 
 ### How Kiro Was Used
-~Spec-to-Code
 
-1.Wrote app requirements in /specs/memory_cassette.yaml
-Example: cassette creation, playback, and archive functionality.
-2.Kiro generated starter HTML structures and JS logic.
+~Spec-to-Code
+1.Wrote app requirements in /specs/memory_cassette.yaml <br>
+Example: cassette creation, playback, and archive functionality.  <br>
+2.Kiro generated starter HTML structures and JS logic.  <br>
 
 ~Hooks
-1.Used hooks to automate workflows like converting input → cassette card.
-Defined in /hooks/createCassette.json.
+1.Used hooks to automate workflows like converting input → cassette card. <br>
+Defined in /hooks/createCassette.json. <br>
 
 ~Conversations (Vibe Coding)
-1.Asked Kiro to “design a retro cassette card with CSS”.
-2.Received styled code snippets we refined into the final look.
+1.Asked Kiro to “design a retro cassette card with CSS”. <br>
+2.Received styled code snippets we refined into the final look. <br>
 
 
 ### Repo structure
-   /.kiro  <br>
-   /specs         # Kiro specs for Memory Cassette  <br>
-   /hooks         # Hooks for automating workflows   <br>
-   /conversations # Chat prompts & outputs from Kiro  <br>
-/index.html       # Main app page   <br>
-/style.css        # Retro-inspired styling  <br>
-/script.js        # App logic (cassette creation, playback, archive)  <br>
+  <img width="855" height="266" alt="Screenshot (371)" src="https://github.com/user-attachments/assets/787ac714-81ba-41a6-95f4-9abe06ca48d2" />
+
