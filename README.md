@@ -17,9 +17,9 @@ structure features, design UI, and generate key code components.
 🎨 Minimal HTML/CSS/JS implementation (no frameworks).
 
 ### Tech Stack
->Frontend: HTML, CSS, JavaScript
->Styling: Custom CSS with retro-inspired design
->AI Assistance: Kiro (specs, hooks, vibe coding)
+>Frontend: HTML, CSS, JavaScript <br>
+>Styling: Custom CSS with retro-inspired design<br>
+>AI Assistance: Kiro (specs, hooks, vibe coding)<br>
 
 ### How Kiro Was Used
 ~Spec-to-Code
@@ -38,10 +38,10 @@ Defined in /hooks/createCassette.json.
 
 
 ### Repo structure
-   /.kiro
-   /specs         # Kiro specs for Memory Cassette
-   /hooks         # Hooks for automating workflows
-   /conversations # Chat prompts & outputs from Kiro
-/index.html       # Main app page
-/style.css        # Retro-inspired styling
-/script.js        # App logic (cassette creation, playback, archive)
+   /.kiro  <br>
+   /specs         # Kiro specs for Memory Cassette  <br>
+   /hooks         # Hooks for automating workflows   <br>
+   /conversations # Chat prompts & outputs from Kiro  <br>
+/index.html       # Main app page   <br>
+/style.css        # Retro-inspired styling  <br>
+/script.js        # App logic (cassette creation, playback, archive)  <br>
