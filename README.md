@@ -23,16 +23,16 @@ structure features, design UI, and generate key code components.
 
 ### How Kiro Was Used
 
-~Spec-to-Code
+~Spec-to-Code <br>
 1.Wrote app requirements in /specs/memory_cassette.yaml <br>
 Example: cassette creation, playback, and archive functionality.  <br>
 2.Kiro generated starter HTML structures and JS logic.  <br>
 
-~Hooks
+~Hooks <br>
 1.Used hooks to automate workflows like converting input → cassette card. <br>
 Defined in /hooks/createCassette.json. <br>
 
-~Conversations (Vibe Coding)
+~Conversations (Vibe Coding) <br>
 1.Asked Kiro to “design a retro cassette card with CSS”. <br>
 2.Received styled code snippets we refined into the final look. <br>
 
