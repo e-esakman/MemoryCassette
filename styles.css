@@ -4587,73 +4587,7 @@ HEME SYSTEM ===== */
     font-size: 14px;
 }
 
-/* Mood Timeline */
-.mood-timeline {
-    background: var(--cassette-beige);
-    border: 2px solid var(--border-dark);
-    border-radius: 15px;
-    padding: 30px;
-}
 
-.mood-timeline h3 {
-    font-family: 'Times New Roman', serif;
-    font-size: 24px;
-    color: var(--text-dark);
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.timeline-container {
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-.timeline-entry {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px;
-    margin-bottom: 10px;
-    background: var(--paper-white);
-    border: 1px solid var(--border-medium);
-    border-radius: 10px;
-    transition: all 0.3s ease;
-}
-
-.timeline-entry:hover {
-    transform: translateX(5px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.timeline-emoji {
-    font-size: 24px;
-    min-width: 30px;
-}
-
-.timeline-info {
-    flex: 1;
-}
-
-.timeline-mood {
-    font-family: 'Times New Roman', serif;
-    font-weight: bold;
-    color: var(--text-dark);
-    margin-bottom: 5px;
-}
-
-.timeline-date {
-    font-family: 'Times New Roman', serif;
-    font-size: 12px;
-    color: var(--text-medium);
-}
-
-.timeline-value {
-    font-family: 'Times New Roman', serif;
-    font-weight: bold;
-    color: var(--cassette-border);
-    min-width: 60px;
-    text-align: right;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -4683,8 +4617,8 @@ HEME SYSTEM ===== */
     #constellationCanvas {
         height: 300px;
     }
-}/
-* Quick Mood Selector */
+}
+/* Quick Mood Selector */
 .quick-mood-selector {
     background: var(--paper-white);
     border: 2px solid var(--border-medium);
@@ -4765,7 +4699,6 @@ HEME SYSTEM ===== */
 }
 
 /* Reduce repaints for frequently updated elements */
-.timeline-entry,
 .memory-cassette-card {
     contain: layout style paint;
 }
@@ -4797,7 +4730,6 @@ HEME SYSTEM ===== */
 }
 
 /* Optimize scrolling performance */
-.timeline-container,
 .archive-grid {
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
